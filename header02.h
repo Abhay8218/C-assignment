@@ -94,13 +94,13 @@ void reverse_words(char str[]) {
 
     // Split the words manually
     while (1) {
-        if (str[i]!=' ' && str[i]!='\0') {
-            words[word_count][j++] = str[i];
+        if (str[i]!=' '&&str[i]!='\0') {
+            words[word_count][j++]=str[i];
         } else {
-            words[word_count][j] = '\0';
+            words[word_count][j]='\0';
             word_count++;
             j = 0;
-            if (str[i] == '\0')
+            if (str[i]=='\0')
                 break;
         }
         i++;
@@ -108,13 +108,13 @@ void reverse_words(char str[]) {
 
     // Reconstruct the string in reverse order
     k = 0;
-    for (i = word_count - 1; i >= 0; i--) {
-        int l = 0;
-        while (words[i][l] != '\0') {
-            str[k++] = words[i][l++];
+    for(i = word_count-1;i>=0;i--) {
+        int l=0;
+        while(words[i][l]!='\0') {
+            str[k++]=words[i][l++];
         }
-        if (i > 0) {
-            str[k++] = ' ';
+        if (i>0) {
+            str[k++] =' ';
         }
     }
     str[k] = '\0';
